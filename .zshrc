@@ -95,15 +95,15 @@ bindkey '^b' backward-char
 bindkey '^f' forward-char
 bindkey '^u' backward-kill-line
 
+alias c=clear
+alias e=exit
 alias f=fg
-alias gs='git status'
-alias gpo='git push origin'
-alias gst='git stash'
 alias l='ls -l'
 alias ll='ls -al'
 alias rm='/bin/rm'
-alias swap_win_alt='setxkbmap -option altwin:swap_alt_win'
-alias swap_back_alt_win='setxkbmap -option'
-alias ssloc='sslocal -s 104.224.128.17 -p 443 -k ZTI3YTIyZm'
+alias vi=vim
+alias gs='git status'
+alias gpo='git push origin'
+alias gst='git stash'
 
 export LANG=en_US.UTF-8

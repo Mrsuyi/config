@@ -2,8 +2,6 @@
 "                               hotkey
 "====================================================================
 "autocmd BufWritePost $MYVIMRC source $MYVIMRC "load vimrc instantly
-filetype on        "recognize file type
-filetype plugin on "and load different plugin
 syntax enable      "enable default
 syntax on          "enable third-party
 
