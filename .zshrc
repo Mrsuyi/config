@@ -98,8 +98,9 @@ bindkey '^u' backward-kill-line
 alias c=clear
 alias e=exit
 alias f=fg
-alias l='ls -l'
-alias ll='ls -al'
+alias t=tree
+alias l='ls -hl'
+alias ll='ls -ahl'
 alias rm='/bin/rm'
 alias vi=vim
 alias gs='git status'
