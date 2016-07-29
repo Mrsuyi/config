@@ -33,6 +33,8 @@ set tabstop=4     "show tab as X space
 set shiftwidth=4  "add X space when use << >>
 set softtabstop=4 "treat consistant space as tab
 
+"color
+set t_Co=256      " use 265 colors in vim
 
 "====================================================================
 "                      vundle(plugin management)
@@ -83,6 +85,7 @@ colorscheme molokai
 hi Comment cterm=italic,bold
 hi Normal ctermfg=254 ctermbg=none
 hi ColorColumn ctermbg=236
+"let g:molokai_orginal=1
 let g:Powerline_colorscheme='solarized256'
 
 " edit
@@ -114,6 +117,9 @@ let mapleader=";"  "set leader key
 "inoremap { {}<left>
 
 " normal mode
+nnoremap <C-p> :bprev<cr>
+nnoremap <C-n> :bnext<cr>
+
 nnoremap <leader>q :q<cr>
 nnoremap <leader>Q :qa<cr>
 nnoremap <leader>w :w<cr>
@@ -124,5 +130,9 @@ nnoremap <leader>h <C-w>w
 nnoremap <leader>l :Explore<cr>
 nnoremap <leader>n :noh<cr>
 
+" visual mode
+vnoremap . :norm.<cr>
+
 " plugin hotkey
 nnoremap <leader>d :YcmCompleter GoTo<CR>
+
