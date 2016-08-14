@@ -11,6 +11,8 @@ local beautiful = require("beautiful")
 local naughty = require("naughty")
 local menubar = require("menubar")
 
+local wallpaper = require("wallpaper")
+
 -- powerline
 package.path = package.path .. ';/usr/lib/python3.5/site-packages/powerline/bindings/awesome/?.lua'
 require('powerline')
@@ -46,7 +48,7 @@ beautiful.init("/usr/share/awesome/themes/zenburn/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
 terminal = "lxterminal"
-editor = os.getenv("EDITOR") or "nano"
+editor = os.getenv("EDITOR") or "vim"
 editor_cmd = terminal .. " -e " .. editor
 
 -- Default modkey.
@@ -61,25 +63,17 @@ local layouts =
 {
     awful.layout.suit.floating,
     awful.layout.suit.tile,
-    awful.layout.suit.tile.left,
-    awful.layout.suit.tile.bottom,
-    awful.layout.suit.tile.top,
-    awful.layout.suit.fair,
-    awful.layout.suit.fair.horizontal,
-    awful.layout.suit.spiral,
-    awful.layout.suit.spiral.dwindle,
+    --awful.layout.suit.tile.left,
+    --awful.layout.suit.tile.bottom,
+    --awful.layout.suit.tile.top,
+    --awful.layout.suit.fair,
+    --awful.layout.suit.fair.horizontal,
+    --awful.layout.suit.spiral,
+    --awful.layout.suit.spiral.dwindle,
     awful.layout.suit.max,
-    awful.layout.suit.max.fullscreen,
-    awful.layout.suit.magnifier
+    --awful.layout.suit.max.fullscreen,
+    --awful.layout.suit.magnifier
 }
--- }}}
-
--- {{{ Wallpaper
-if beautiful.wallpaper then
-    for s = 1, screen.count() do
-        gears.wallpaper.maximized(beautiful.wallpaper, s, true)
-    end
-end
 -- }}}
 
 -- {{{ Tags
@@ -279,7 +273,10 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey }, "p", function() menubar.show() end),
 
     -- xscreensaver
-    awful.key({ modkey }, "z", function () awful.util.spawn("xscreensaver-command -lock") end)
+    awful.key({ modkey }, "z", function () awful.util.spawn("xscreensaver-command -lock") end),
+
+    -- wallpaper
+    awful.key({ modkey }, ".", function () wallpaper.next() end)
 )
 
 clientkeys = awful.util.table.join(

@@ -1,45 +1,4 @@
 "====================================================================
-"                                general
-"====================================================================
-"autocmd BufWritePost $MYVIMRC source $MYVIMRC "load vimrc instantly
-syntax enable      "enable default
-syntax on          "enable third-party
-
-set nocompatible   "not compatible with old version
-set mouse=a        "enable mouse
-set wildmenu       "vim-cmd auto complete
-
-"show
-set background=dark
-set laststatus=2    "status bar
-set ruler           "cursor-pos
-set number          "line-num
-set nowrap          "no wrap
-
-"search
-set hlsearch        "highlight result
-set incsearch       "search instantly
-
-"fold
-set foldmethod=syntax
-set nofoldenable
-
-"indent
-filetype indent on
-set expandtab     "auto change tab to space
-set autoindent    "auto copy current-line's tab to new line
-set cindent       "auto add extra tab on new line
-set tabstop=4     "show tab as X space
-set shiftwidth=4  "add X space when use << >>
-set softtabstop=4 "treat consistant space as tab
-
-"apperance
-set t_Co=256      " use 265 colors in vim
-
-"hi MatchParen cterm=none ctermbg=green ctermfg=blue
-"hi MatchParen gui=bold guibg=NONE guifg=blue
-
-"====================================================================
 "                                 plugins
 "====================================================================
 
@@ -78,7 +37,6 @@ call vundle#end()
 
 filetype plugin indent on
 
-
 "====================================================================
 "                          plugin settings
 "====================================================================
@@ -86,16 +44,11 @@ filetype plugin indent on
 " theme
 set guifont=YaHei\ consolas\ Hybrid\ 11.5
 colorscheme molokai
-"hi Comment cterm=italic,bold
-"hi Normal ctermfg=254 ctermbg=none
-"hi ColorColumn ctermbg=236
-let g:molokai_orginal=1
-"let g:Powerline_colorscheme='solarized256'
 
 " edit
-let g:indent_guides_enable_on_vim_startup=1
-let g:indent_guides_start_level=2
-let g:indent_guides_guide_size=1
+"let g:indent_guides_enable_on_vim_startup=1
+"let g:indent_guides_start_level=2
+"let g:indent_guides_guide_size=1
 
 " youcompleteme
 "let g:ycm_key_list_select_completion=[]
@@ -143,3 +96,45 @@ vnoremap . :norm.<cr>
 " plugin hotkey
 nnoremap <leader>d :YcmCompleter GoTo<CR>
 
+"====================================================================
+"                                general
+"====================================================================
+"autocmd BufWritePost $MYVIMRC source $MYVIMRC "load vimrc instantly
+syntax enable      "enable default
+syntax on          "enable third-party
+
+set nocompatible   "not compatible with old version
+set mouse=a        "enable mouse
+set wildmenu       "vim-cmd auto complete
+
+"show
+set background=dark
+set laststatus=2    "status bar
+set ruler           "cursor-pos
+set number          "line-num
+set nowrap          "no wrap
+
+"search
+set hlsearch        "highlight result
+set incsearch       "search instantly
+
+"fold
+"set foldmethod=syntax
+"set nofoldenable
+
+"indent
+"filetype indent on
+set expandtab     "auto change tab to space
+set autoindent    "auto copy current-line's tab to new line
+set cindent       "auto add extra tab on new line
+set tabstop=4     "show tab as X space
+set shiftwidth=4  "add X space when use << >>
+set softtabstop=4 "treat consistant space as tab
+
+"apperance
+set t_Co=256      " use 265 colors in vim
+
+let loaded_matchparen = 1 "disable the fucking weird highlight
+
+hi Normal ctermfg=254 ctermbg=none
+hi ColorColumn ctermbg=236

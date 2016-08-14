@@ -1,0 +1,124 @@
+URxvt.iconFile:             /usr/share/icons/hicolor/scalable/apps/urxvt_icon
+URxvt.foreground:           white
+URxvt.fading:               10
+URxvt.saveLines:            10000
+URxvt.internalBorder:       1
+URxvt.lineSpace:            0
+URxvt.cursorBlink:          false
+URxvt.scrollBar:            false
+URxvt.urlLauncher:          chromium
+
+urxvt*internalBorder:       0
+urxvt*externalBorder:       0
+
+! urxvt clipboard
+URxvt.perl-ext-common:      selection-to-clipboard
+ 
+! real transparency
+URxvt.depth:                32
+URxvt.background:           rgba:1111/1111/1111/dddd
+! fake transparency
+!URxvt.transparent:          false
+!URxvt.shading               15
+
+! fonts
+URxvt.allow_bold:           true
+URxvt*font:                 xft:Consolas:regular:size=13,xft:AR PL UKai CN:regular:size=12
+!URxvt*imFont:               xft:Consolas:regular:size=13,xft:AR PL UKai CN:regular:size=12
+!URxvt*boldFont:             xft:Consolas:bold:size=13,xft:AR PL UKai CN:bold:size=12
+!URxvt*italicFont:           xft:Consolas:italic:size=13,xft:AR PL UKai CN:italic:size=12
+!URxvt*font:                 xft:DejaVu Sans Mono:regular:size=13,xft:AR PL UKai CN:regular:size=12
+! Consolas font is great for bold and italic style
+!URxvt*boldItalicFont:       xft:Consolas:bold:italic:size=10,xft:AR PL UKai CN:bold:italic:size=12
+URxvt*letterSpace:          -2
+
+! dpi control the size of font
+Xft.dpi:        108
+Xft.antialias:  true
+Xft.rgba:       rgb
+Xft.hinting:    true
+Xft.hintstyle:  hintfull
+ 
+!! URxvt color configuration
+
+! ------------------------------------------------------------
+! fishbone is good for green theme
+! ------------------------------------------------------------
+
+!http://www.xcolors.net/dl/fishbone
+!black
+*color0:#293b3b
+*color8:#344040
+
+!red
+*color1:#bf5357
+*color9:#bf6367
+
+!green
+*color2:#41a551
+*color10:#51a55f
+
+!yellow
+*color3:#aea64f
+*color11:#aea75d
+
+!blue
+*color4:#416ea5
+*color12:#5177a5
+
+!magenta
+*color5:#bf6053 
+*color13:#bf6e63
+
+!cyan
+*color6:#714da5
+*color14:#7859a5
+
+!white
+*color7:#876868
+*color15:#876f6f
+
+!------------------------------------------------------------------------------
+! URxvt Colors (good for black theme)
+
+! *cursorColor:                         #6d715e
+! *VT100.colorBDMode:                   true
+! *VT100.colorULMode:                   true
+! *VT100.colorUL:                       magenta
+! *VT100.veryBoldColors:                6
+! 
+! *background: [80]#161212
+! *foreground: #c0b18b
+! 
+! !black
+! *color0:#4A3637
+! *color8:#4A3637
+! 
+! !red
+! *color1:#d17b49
+! *color9:#d17b49
+! 
+! !green
+! *color2:#7b8748
+! *color10:#7b8748
+! 
+! !yellow
+! *color3:#af865a
+! *color11:#af865a
+! 
+! !blue
+! *color4:#535C5C
+! *color12:#535C5C
+! 
+! !magenta
+! *color5:#775759
+! *color13:#775759
+! 
+! !cyan
+! *color6:#6d715e
+! *color14:#6d715e
+! 
+! !white
+! *color7:#c0b18b
+! *color15:#c0b18b
+
