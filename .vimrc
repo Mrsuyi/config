@@ -2,7 +2,7 @@
 "                                general
 "====================================================================
 set nocompatible   "not compatible with old version
-set mouse=a        "enable mouse
+"set mouse=a        "enable mouse
 set wildmenu       "vim-cmd auto complete
 
 "show
@@ -83,8 +83,6 @@ hi Normal ctermfg=254 ctermbg=none
 hi ColorColumn ctermbg=236
 
 " youcompleteme
-let g:ycm_key_list_select_completion=[]
-let g:ycm_key_list_previous_completion=[]
 let g:ycm_complete_in_comments=1
 let g:ycm_collect_identifiers_from_comments_and_strings=1
 let g:ycm_add_preview_to_completeopt=1
