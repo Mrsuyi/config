@@ -1,4 +1,33 @@
 "====================================================================
+"                                general
+"====================================================================
+set nocompatible   "not compatible with old version
+set mouse=a        "enable mouse
+set wildmenu       "vim-cmd auto complete
+
+"show
+set laststatus=2    "status bar
+set ruler           "cursor-pos
+set number          "line-num
+set nowrap          "no wrap
+
+"search
+set hlsearch        "highlight result
+set incsearch       "search instantly
+
+"fold
+set foldmethod=syntax
+set nofoldenable
+
+"indent
+set expandtab     "auto change tab to space
+set autoindent    "auto copy current-line's tab to new line
+set cindent       "auto add extra tab on new line
+set tabstop=4     "show tab as X space
+set shiftwidth=4  "add X space when use << >>
+set softtabstop=4 "treat consistant space as tab
+
+"====================================================================
 "                                 plugins
 "====================================================================
 
@@ -12,7 +41,6 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'tomasr/molokai'
 "Plugin 'vim-scripts/phd'
 Plugin 'octol/vim-cpp-enhanced-highlight'
-"Plugin 'nathanaelkane/vim-indent-guides'
 "Plugin 'derekwyatt/vim-fswitch'
 "Plugin 'kshenoy/vim-signature'
 "Plugin 'majutsushi/tagbar'
@@ -21,7 +49,7 @@ Plugin 'octol/vim-cpp-enhanced-highlight'
 "Plugin 'vim-scripts/vimprj'
 "Plugin 'dyng/ctrlsf.vim'
 "Plugin 'terryma/vim-multiple-cursors'
-"Plugin 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/nerdcommenter'
 "Plugin 'vim-scripts/DrawIt'
 "Plugin 'SirVer/ultisnips'
 Plugin 'Valloric/YouCompleteMe'
@@ -38,21 +66,25 @@ call vundle#end()
 filetype plugin indent on
 
 "====================================================================
-"                          plugin settings
+"                              appearance
 "====================================================================
 
-" theme
-set guifont=YaHei\ consolas\ Hybrid\ 11.5
 colorscheme molokai
 
-" edit
-"let g:indent_guides_enable_on_vim_startup=1
-"let g:indent_guides_start_level=2
-"let g:indent_guides_guide_size=1
+syntax enable
+syntax on
+
+set t_Co=256      " use 265 colors in vim
+set guifont=YaHei\ consolas\ Hybrid\ 11.5
+
+let loaded_matchparen = 1 "disable the fucking weird highlight
+
+hi Normal ctermfg=254 ctermbg=none
+hi ColorColumn ctermbg=236
 
 " youcompleteme
-"let g:ycm_key_list_select_completion=[]
-"let g:ycm_key_list_previous_completion=[]
+let g:ycm_key_list_select_completion=[]
+let g:ycm_key_list_previous_completion=[]
 let g:ycm_complete_in_comments=1
 let g:ycm_collect_identifiers_from_comments_and_strings=1
 let g:ycm_add_preview_to_completeopt=1
@@ -65,9 +97,9 @@ let g:netrw_sort_sequence='[\/]$,\<core\%(\.\d\+\)\=,\.[a-np-z]$,\.*,~$'
 "====================================================================
 "                               hotkey
 "====================================================================
-
-" leaderkey
 let mapleader=";"  "set leader key
+
+set pastetoggle=<leader>p
 
 " input mode
 "inoremap " ""<left>
@@ -96,45 +128,3 @@ vnoremap . :norm.<cr>
 " plugin hotkey
 nnoremap <leader>d :YcmCompleter GoTo<CR>
 
-"====================================================================
-"                                general
-"====================================================================
-"autocmd BufWritePost $MYVIMRC source $MYVIMRC "load vimrc instantly
-syntax enable      "enable default
-syntax on          "enable third-party
-
-set nocompatible   "not compatible with old version
-set mouse=a        "enable mouse
-set wildmenu       "vim-cmd auto complete
-
-"show
-set background=dark
-set laststatus=2    "status bar
-set ruler           "cursor-pos
-set number          "line-num
-set nowrap          "no wrap
-
-"search
-set hlsearch        "highlight result
-set incsearch       "search instantly
-
-"fold
-"set foldmethod=syntax
-"set nofoldenable
-
-"indent
-"filetype indent on
-set expandtab     "auto change tab to space
-set autoindent    "auto copy current-line's tab to new line
-set cindent       "auto add extra tab on new line
-set tabstop=4     "show tab as X space
-set shiftwidth=4  "add X space when use << >>
-set softtabstop=4 "treat consistant space as tab
-
-"apperance
-set t_Co=256      " use 265 colors in vim
-
-let loaded_matchparen = 1 "disable the fucking weird highlight
-
-hi Normal ctermfg=254 ctermbg=none
-hi ColorColumn ctermbg=236
