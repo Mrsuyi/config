@@ -27,20 +27,26 @@ set tabstop=4     "show tab as X space
 set shiftwidth=4  "add X space when use << >>
 set softtabstop=4 "treat consistant space as tab
 
+"persistent undo
+set undofile
+set undodir=$HOME/.vim/undo
+set undolevels=1000
+set undoreload=10000
+
 "====================================================================
 "                                 plugins
 "====================================================================
 
-set rtp+=/usr/lib/python3.5/site-packages/powerline/bindings/vim "powerline
+"set rtp+=/usr/lib/python3.5/site-packages/powerline/bindings/vim "powerline
 
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
-"Plugin 'altercation/vim-colors-solarized'
 Plugin 'tomasr/molokai'
-"Plugin 'vim-scripts/phd'
 Plugin 'octol/vim-cpp-enhanced-highlight'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 "Plugin 'derekwyatt/vim-fswitch'
 "Plugin 'kshenoy/vim-signature'
 "Plugin 'majutsushi/tagbar'
@@ -51,7 +57,6 @@ Plugin 'octol/vim-cpp-enhanced-highlight'
 "Plugin 'terryma/vim-multiple-cursors'
 Plugin 'scrooloose/nerdcommenter'
 "Plugin 'vim-scripts/DrawIt'
-"Plugin 'SirVer/ultisnips'
 Plugin 'Valloric/YouCompleteMe'
 "Plugin 'derekwyatt/vim-protodef'
 "Plugin 'scrooloose/nerdtree'
@@ -82,15 +87,20 @@ let loaded_matchparen = 1 "disable the fucking weird highlight
 hi Normal ctermfg=254 ctermbg=none
 hi ColorColumn ctermbg=236
 
-" youcompleteme
+"youcompleteme
 let g:ycm_complete_in_comments=1
 let g:ycm_collect_identifiers_from_comments_and_strings=1
 let g:ycm_add_preview_to_completeopt=1
 let g:ycm_autoclose_preview_window_after_insertion=1
 let g:ycm_confirm_extra_conf=0
 
-" file-explorer
+"file-explorer
 let g:netrw_sort_sequence='[\/]$,\<core\%(\.\d\+\)\=,\.[a-np-z]$,\.*,~$'
+
+"airline
+let g:airline#extension#tabline#enable=1
+let g:airline_powerline_fonts=1
+let g:airline_theme="powerlineish"
 
 "====================================================================
 "                               hotkey
