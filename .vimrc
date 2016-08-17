@@ -47,6 +47,7 @@ Plugin 'tomasr/molokai'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'tpope/vim-fugitive'
 "Plugin 'derekwyatt/vim-fswitch'
 "Plugin 'kshenoy/vim-signature'
 "Plugin 'majutsushi/tagbar'
@@ -98,7 +99,6 @@ let g:ycm_confirm_extra_conf=0
 let g:netrw_sort_sequence='[\/]$,\<core\%(\.\d\+\)\=,\.[a-np-z]$,\.*,~$'
 
 "airline
-let g:airline#extension#tabline#enable=1
 let g:airline_powerline_fonts=1
 let g:airline_theme="powerlineish"
 
