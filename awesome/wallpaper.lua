@@ -2,7 +2,7 @@ local gears = require("gears")
 
 -- config
 local path = "/home/mrsuyi/wallpaper/"
-local timeout = 600 
+local timeout = 1800 
 
 function scandir(directory, filter)
     local i, t, popen = 0, {}, io.popen

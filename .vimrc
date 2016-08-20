@@ -5,7 +5,7 @@ set nocompatible   "not compatible with old version
 "set mouse=a        "enable mouse
 set wildmenu       "vim-cmd auto complete
 
-"show
+"layout
 set laststatus=2    "status bar
 set ruler           "cursor-pos
 set number          "line-num
@@ -27,11 +27,15 @@ set tabstop=4     "show tab as X space
 set shiftwidth=4  "add X space when use << >>
 set softtabstop=4 "treat consistant space as tab
 
-"persistent undo
+"history
+set history=50
 set undofile
 set undodir=$HOME/.vim/undo
 set undolevels=1000
 set undoreload=10000
+
+"restore last visit-position when reopen a file
+autocmd BufReadPost * if line("'\"") >= 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 
 "====================================================================
 "                                 plugins
@@ -135,4 +139,4 @@ vnoremap . :norm.<cr>
 
 " plugin hotkey
 nnoremap <leader>d :YcmCompleter GoTo<CR>
-
+nnoremap <leader>f :YcmCompleter FixIt<CR>
