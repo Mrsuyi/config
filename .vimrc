@@ -41,8 +41,6 @@ autocmd BufReadPost * if line("'\"") >= 1 && line("'\"") <= line("$") | exe "nor
 "                                 plugins
 "====================================================================
 
-"set rtp+=/usr/lib/python3.5/site-packages/powerline/bindings/vim "powerline
-
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
