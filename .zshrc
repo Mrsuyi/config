@@ -53,13 +53,7 @@ plugins=(git vi-mode extract common-aliases)
 
 # User configuration
 
-export PATH="/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/work/.local/bin:/home/work/bin"
-# export MANPATH="/usr/local/man:$MANPATH"
-
 source $ZSH/oh-my-zsh.sh
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -95,16 +89,30 @@ bindkey '^b' backward-char
 bindkey '^f' forward-char
 bindkey '^u' backward-kill-line
 
-alias c=clear
-alias e=exit
-alias f=fg
-alias t=tree
+alias c='clear'
+alias e='exit'
+alias f='fg'
+alias t='tree'
 alias l='ls -hl'
 alias ll='ls -ahl'
 alias rm='/bin/rm'
-alias vi=vim
+alias vi='vim'
 alias gs='git status'
 alias gpo='git push origin'
 alias gst='git stash'
+alias cc='gcc'
+alias cxx='g++'
 
+# language
 export LANG=en_US.UTF-8
+
+# c/cpp   compile/runtime   h/hpp/so
+I_PATH=${HOME}/include
+L_PATH=${HOME}/lib
+export C_INCLUDE_PATH=${C_INCLUDE_PATH}:${I_PATH}
+export CPLUS_INCLUDE_PATH=${CPLUS_INCLUDE_PATH}:${I_PATH}
+export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${L_PATH}
+export LIBRARY_PATH=${LIBRARY_PATH}:${L_PATH}
+
+# PATH
+export PATH=${PATH}:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin
