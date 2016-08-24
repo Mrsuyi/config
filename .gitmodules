@@ -1,0 +1,3 @@
+[submodule "awesome/powerarrow"]
+	path = awesome/powerarrow
+	url = https://github.com/romockee/powerarrow.git

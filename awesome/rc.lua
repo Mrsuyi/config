@@ -1,50 +1,19 @@
--- Standard awesome library
-local gears = require("gears")
-local awful = require("awful")
-awful.rules = require("awful.rules")
-require("awful.autofocus")
--- Widget and layout library
-local wibox = require("wibox")
--- Theme handling library
+local gears     = require("gears")
+local awful     = require("awful")
+awful.rules     = require("awful.rules")
+                  require("awful.autofocus")
+local wibox     = require("wibox")
 local beautiful = require("beautiful")
--- Notification library
-local naughty = require("naughty")
-local menubar = require("menubar")
+local naughty   = require("naughty")
+local menubar   = require("menubar")
+local vicious   = require("vicious")
 
 local wallpaper = require("wallpaper")
 
--- powerline
-package.path = package.path .. ';/usr/lib/python3.5/site-packages/powerline/bindings/awesome/?.lua'
-require('powerline')
-
--- {{{ Error handling
--- Check if awesome encountered an error during startup and fell back to
--- another config (This code will only ever execute for the fallback config)
-if awesome.startup_errors then
-    naughty.notify({ preset = naughty.config.presets.critical,
-                     title = "Oops, there were errors during startup!",
-                     text = awesome.startup_errors })
-end
-
--- Handle runtime errors after startup
-do
-    local in_error = false
-    awesome.connect_signal("debug::error", function (err)
-        -- Make sure we don't go into an endless error loop
-        if in_error then return end
-        in_error = true
-
-        naughty.notify({ preset = naughty.config.presets.critical,
-                         title = "Oops, an error happened!",
-                         text = err })
-        in_error = false
-    end)
-end
--- }}}
+require("error");
 
 -- {{{ Variable definitions
--- Themes define colours, icons, font and wallpapers.
-beautiful.init("/usr/share/awesome/themes/zenburn/theme.lua")
+beautiful.init(awful.util.getdir("config") .. "/themes/zenburn/theme.lua");
 
 -- This is used later as the default terminal and editor to run.
 terminal = "lxterminal"
@@ -105,6 +74,12 @@ mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
 -- Menubar configuration
 menubar.utils.terminal = terminal -- Set the terminal for applications that require it
 -- }}}
+
+netwidget = wibox.widget.textbox()
+vicious.register(netwidget, vicious.widgets.net, '<span color="#CC9393">${wlp3s0b1 down_kb}</span> <span color="#7F9F7F">${wlp3s0b1 up_kb}</span>', 3)
+
+datewidget = wibox.widget.textbox()
+vicious.register(datewidget, vicious.widgets.date, " 20%y-%m-%d %R", 60)
 
 -- {{{ Wibox
 -- Create a textclock widget
@@ -189,8 +164,9 @@ for s = 1, screen.count() do
     -- Widgets that are aligned to the right
     local right_layout = wibox.layout.fixed.horizontal()
     if s == 1 then right_layout:add(wibox.widget.systray()) end
+    right_layout:add(netwidget)
+    right_layout:add(datewidget)
     --right_layout:add(mytextclock)
-    right_layout:add(powerline_widget)
     right_layout:add(mylayoutbox[s])
 
     -- Now bring it all together (with the tasklist in the middle)

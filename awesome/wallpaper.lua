@@ -2,7 +2,7 @@ local gears = require("gears")
 
 -- config
 local path = "/home/mrsuyi/wallpaper/"
-local timeout = 600 
+local timeout = 1800 
 
 function scandir(directory, filter)
     local i, t, popen = 0, {}, io.popen
@@ -28,11 +28,11 @@ timer:connect_signal("timeout", function()
  
   timer:stop()
 
+  index = math.random( 1, #files)
+
   for s = 1, screen.count() do
     gears.wallpaper.maximized(path .. files[index], s, false)
   end
- 
-  index = math.random( 1, #files)
  
   timer.timeout = timeout
   timer:start()
