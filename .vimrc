@@ -80,6 +80,8 @@ colorscheme molokai
 syntax enable
 syntax on
 
+"set colorcolumn=80
+
 set t_Co=256      " use 265 colors in vim
 set guifont=YaHei\ consolas\ Hybrid\ 11.5
 

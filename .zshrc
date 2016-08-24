@@ -106,5 +106,6 @@ alias vi=vim
 alias gs='git status'
 alias gpo='git push origin'
 alias gst='git stash'
+alias v=valgrind --leak-check=yes
 
 export LANG=en_US.UTF-8
