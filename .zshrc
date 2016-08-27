@@ -100,8 +100,8 @@ alias vi='vim'
 alias gs='git status'
 alias gpo='git push origin'
 alias gst='git stash'
-alias cc="gcc"
-alias cxx="g++"
+alias cc="gcc -std=c11"
+alias cxx="g++ -std=c++11"
 
 # language
 export LANG=en_US.UTF-8
