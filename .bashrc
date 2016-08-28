@@ -5,9 +5,19 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-alias ..='cd ..'
-alias l='ls -hl'
-alias ll='ls -ahl'
+alias c='clear'
+alias e='exit'
+alias f='fg'
+alias t='tree'
+alias l='ls -hl --time-style=iso'
+alias ll='ls -ahl --time-style=iso'
+alias rm='/bin/rm'
+alias vi='vim'
+alias gs='git status'
+alias gpo='git push origin'
+alias gst='git stash'
+alias cc="gcc -std=c11"
+alias cxx="g++ -std=c++11"
 
 if [ "x$TERM" = "xxterm" ]
 then

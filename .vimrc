@@ -20,12 +20,22 @@ set foldmethod=syntax
 set nofoldenable
 
 "indent
-set expandtab     "auto change tab to space
 set autoindent    "auto copy current-line's tab to new line
-set cindent       "auto add extra tab on new line
+set expandtab     "auto change tab to space
 set tabstop=4     "show tab as X space
 set shiftwidth=4  "add X space when use << >>
-set softtabstop=4 "treat consistant space as tab
+"set softtabstop=4 "treat consistant space as tab
+filetype plugin indent on
+au Filetype html,j2 setlocal shiftwidth=2 tabstop=2
+
+"auto load template
+au BufNewFile *.hpp  0r ~/.vim/skeleton/skel.hpp
+au BufNewFile *.h    0r ~/.vim/skeleton/skel.h
+au BufNewFile *.cpp  0r ~/.vim/skeleton/skel.cpp
+au BufNewFile *.c    0r ~/.vim/skeleton/skel.c
+au BufNewFile *.html 0r ~/.vim/skeleton/skel.html
+au BufNewFile *.py   0r ~/.vim/skeleton/skel.py
+au BufNewFile *.sh   0r ~/.vim/skeleton/skel.sh
 
 "history
 set history=50
@@ -87,7 +97,7 @@ syntax on
 set t_Co=256      " use 265 colors in vim
 set guifont=YaHei\ consolas\ Hybrid\ 11.5
 
-let loaded_matchparen = 1 "disable the fucking weird highlight
+"let loaded_matchparen = 1 "disable the fucking weird highlight
 
 hi Normal ctermfg=254 ctermbg=none
 hi ColorColumn ctermbg=236
