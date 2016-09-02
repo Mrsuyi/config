@@ -26,7 +26,8 @@ set tabstop=4     "show tab as X space
 set shiftwidth=4  "add X space when use << >>
 "set softtabstop=4 "treat consistant space as tab
 filetype plugin indent on
-au Filetype html,j2 setlocal shiftwidth=2 tabstop=2
+au Filetype javascript setlocal cindent
+au Filetype html,j2    setlocal shiftwidth=2 tabstop=2
 
 "auto load template
 au BufNewFile *.hpp  0r ~/.vim/skeleton/skel.hpp
