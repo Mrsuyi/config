@@ -29,13 +29,14 @@ filetype plugin indent on
 au Filetype html,j2 setlocal shiftwidth=2 tabstop=2
 
 "auto load template
-au BufNewFile *.hpp  0r ~/.vim/skeleton/skel.hpp
-au BufNewFile *.h    0r ~/.vim/skeleton/skel.h
-au BufNewFile *.cpp  0r ~/.vim/skeleton/skel.cpp
-au BufNewFile *.c    0r ~/.vim/skeleton/skel.c
-au BufNewFile *.html 0r ~/.vim/skeleton/skel.html
-au BufNewFile *.py   0r ~/.vim/skeleton/skel.py
-au BufNewFile *.sh   0r ~/.vim/skeleton/skel.sh
+au BufNewFile *.hpp    0r ~/.vim/skeleton/skel.hpp
+au BufNewFile *.h      0r ~/.vim/skeleton/skel.h
+au BufNewFile *.cpp    0r ~/.vim/skeleton/skel.cpp
+au BufNewFile *.c      0r ~/.vim/skeleton/skel.c
+au BufNewFile *.html   0r ~/.vim/skeleton/skel.html
+au BufNewFile *.py     0r ~/.vim/skeleton/skel.py
+au BufNewFile *.sh     0r ~/.vim/skeleton/skel.sh
+au BufNewFile Makefile 0r ~/.vim/skeleton/Makefile
 
 "history
 set history=50
@@ -115,6 +116,7 @@ let g:netrw_sort_sequence='[\/]$,\<core\%(\.\d\+\)\=,\.[a-np-z]$,\.*,~$'
 "airline
 let g:airline_powerline_fonts=1
 let g:airline_theme="powerlineish"
+let g:airline#extensions#tabline#enabled=1
 
 "====================================================================
 "                               hotkey
@@ -138,6 +140,7 @@ nnoremap <leader>Q :qa<cr>
 nnoremap <leader>w :w<cr>
 nnoremap <leader>W :wq<cr>
 nnoremap <leader>v :vsp<cr>
+nnoremap <leader>b :bd<cr>
 nnoremap <leader>g <C-w>p
 nnoremap <leader>h <C-w>w
 nnoremap <leader>l :Explore<cr>
