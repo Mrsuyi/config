@@ -140,7 +140,7 @@ nnoremap <leader>Q :qa<cr>
 nnoremap <leader>w :w<cr>
 nnoremap <leader>W :wq<cr>
 nnoremap <leader>v :vsp<cr>
-nnoremap <leader>b :bd<cr>
+nnoremap <leader>b :bn\|bd #<cr>
 nnoremap <leader>g <C-w>p
 nnoremap <leader>h <C-w>w
 nnoremap <leader>l :Explore<cr>
