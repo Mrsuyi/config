@@ -74,6 +74,8 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdcommenter'
 "Plugin 'vim-scripts/DrawIt'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'solarnz/thrift.vim'
+Plugin 'rhysd/vim-clang-format'
 "Plugin 'derekwyatt/vim-protodef'
 "Plugin 'scrooloose/nerdtree'
 "Plugin 'fholgado/minibufexpl.vim'
@@ -121,6 +123,15 @@ let g:airline_powerline_fonts=1
 let g:airline_theme="powerlineish"
 let g:airline#extensions#tabline#enabled=1
 
+"format
+let g:clang_format#style_options = {
+            \ "AccessModifierOffset" : -4,
+            \ "AllowShortIfStatementsOnASingleLine" : "true",
+            \ "AlwaysBreakTemplateDeclarations" : "true",
+            \ "AlwaysBreakAfterReturnType" : "AllDefinitions",
+            \ "Standard" : "C++11",
+            \ "BreakBeforeBraces" : "Allman"}
+
 "====================================================================
 "                               hotkey
 "====================================================================
@@ -139,9 +150,8 @@ nnoremap <C-p> :bprev<cr>
 nnoremap <C-n> :bnext<cr>
 
 nnoremap <leader>q :q<cr>
-nnoremap <leader>Q :qa<cr>
 nnoremap <leader>w :w<cr>
-nnoremap <leader>W :wq<cr>
+nnoremap <leader>e :q!<cr>
 nnoremap <leader>v :vsp<cr>
 nnoremap <leader>b :bn\|bd #<cr>
 nnoremap <leader>g <C-w>p
@@ -155,4 +165,4 @@ vnoremap . :norm.<cr>
 
 " plugin hotkey
 nnoremap <leader>d :YcmCompleter GoTo<CR>
-nnoremap <leader>f :YcmCompleter FixIt<CR>
+nnoremap <leader>f :ClangFormat<CR>
