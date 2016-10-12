@@ -34,6 +34,8 @@ au BufNewFile *.hpp    0r ~/.vim/skeleton/skel.hpp
 au BufNewFile *.h      0r ~/.vim/skeleton/skel.h
 au BufNewFile *.cpp    0r ~/.vim/skeleton/skel.cpp
 au BufNewFile *.c      0r ~/.vim/skeleton/skel.c
+au BufNewFile *.l      0r ~/.vim/skeleton/skel.l
+au BufNewFile *.y      0r ~/.vim/skeleton/skel.y
 au BufNewFile *.html   0r ~/.vim/skeleton/skel.html
 au BufNewFile *.py     0r ~/.vim/skeleton/skel.py
 au BufNewFile *.sh     0r ~/.vim/skeleton/skel.sh
@@ -73,6 +75,8 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdcommenter'
 "Plugin 'vim-scripts/DrawIt'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'solarnz/thrift.vim'
+Plugin 'rhysd/vim-clang-format'
 "Plugin 'derekwyatt/vim-protodef'
 "Plugin 'scrooloose/nerdtree'
 "Plugin 'fholgado/minibufexpl.vim'
@@ -112,12 +116,22 @@ let g:ycm_autoclose_preview_window_after_insertion=1
 let g:ycm_confirm_extra_conf=0
 
 "file-explorer
-let g:netrw_sort_sequence='[\/]$,\<core\%(\.\d\+\)\=,\.[a-np-z]$,\.*,~$'
+let g:netrw_sort_sequence='[\/]$'
+"let g:netrw_sort_sequence='[\/]$,\<core\%(\.\d\+\)\=,\.[a-np-z]$,\.*,~$'
 
 "airline
 let g:airline_powerline_fonts=1
 let g:airline_theme="powerlineish"
 let g:airline#extensions#tabline#enabled=1
+
+"format
+let g:clang_format#style_options = {
+            \ "AccessModifierOffset" : -4,
+            \ "AllowShortIfStatementsOnASingleLine" : "true",
+            \ "AlwaysBreakTemplateDeclarations" : "true",
+            \ "AlwaysBreakAfterReturnType" : "AllDefinitions",
+            \ "Standard" : "C++11",
+            \ "BreakBeforeBraces" : "Allman"}
 
 "====================================================================
 "                               hotkey
@@ -137,11 +151,10 @@ nnoremap <C-p> :bprev<cr>
 nnoremap <C-n> :bnext<cr>
 
 nnoremap <leader>q :q<cr>
-nnoremap <leader>Q :qa<cr>
 nnoremap <leader>w :w<cr>
-nnoremap <leader>W :wq<cr>
+nnoremap <leader>e :q!<cr>
 nnoremap <leader>v :vsp<cr>
-nnoremap <leader>b :bd<cr>
+nnoremap <leader>b :bn\|bd #<cr>
 nnoremap <leader>g <C-w>p
 nnoremap <leader>h <C-w>w
 nnoremap <leader>l :Explore<cr>
@@ -153,4 +166,4 @@ vnoremap . :norm.<cr>
 
 " plugin hotkey
 nnoremap <leader>d :YcmCompleter GoTo<CR>
-nnoremap <leader>f :YcmCompleter FixIt<CR>
+nnoremap <leader>f :ClangFormat<CR>
