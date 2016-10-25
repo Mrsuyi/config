@@ -102,6 +102,7 @@ alias gpo='git push origin'
 alias gst='git stash'
 alias cc="gcc -std=c11"
 alias cxx="g++ -std=c++11"
+alias v="valgrind --leak-check=yes"
 
 # language
 export LANG=en_US.UTF-8

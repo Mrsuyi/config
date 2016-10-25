@@ -161,8 +161,11 @@ nnoremap <leader>l :Explore<cr>
 nnoremap <leader>n :noh<cr>
 nnoremap <leader>r @:
 
-" visual mode
+" visual and select mode
 vnoremap . :norm.<cr>
+
+" visual mode 
+vnoremap p pgvy
 
 " plugin hotkey
 nnoremap <leader>d :YcmCompleter GoTo<CR>
