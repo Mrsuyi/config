@@ -129,9 +129,11 @@ let g:clang_format#style_options = {
             \ "AccessModifierOffset" : -4,
             \ "AllowShortIfStatementsOnASingleLine" : "true",
             \ "AlwaysBreakTemplateDeclarations" : "true",
-            \ "AlwaysBreakAfterReturnType" : "TopLevel",
+            \ "AlwaysBreakAfterReturnType" : "TopLevelDefinitions",
             \ "Standard" : "C++11",
             \ "BreakBeforeBraces" : "Allman"}
+let g:clang_format#detect_style_file = 1
+"au FileType c,cpp ClangFormatAutoEnable
 
 "====================================================================
 "                               hotkey
