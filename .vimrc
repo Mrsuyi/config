@@ -129,7 +129,7 @@ let g:clang_format#style_options = {
             \ "AccessModifierOffset" : -4,
             \ "AllowShortIfStatementsOnASingleLine" : "true",
             \ "AlwaysBreakTemplateDeclarations" : "true",
-            \ "AlwaysBreakAfterReturnType" : "AllDefinitions",
+            \ "AlwaysBreakAfterReturnType" : "TopLevel",
             \ "Standard" : "C++11",
             \ "BreakBeforeBraces" : "Allman"}
 
