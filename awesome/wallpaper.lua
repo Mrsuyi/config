@@ -1,7 +1,7 @@
 local gears = require("gears")
 
 -- config
-local path = "/home/mrsuyi/wallpaper/"
+local path = "/home/mrsuyi/Dropbox/wallpaper/"
 local timeout = 1800 
 math.randomseed(os.time())
 

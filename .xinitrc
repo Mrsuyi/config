@@ -47,5 +47,6 @@ fcitx &
 nm-applet &
 xscreensaver &
 xcompmgr &
+dropbox &
 
 exec awesome
