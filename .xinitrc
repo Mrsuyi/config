@@ -47,6 +47,6 @@ fcitx &
 nm-applet &
 xscreensaver &
 xcompmgr &
-dropbox &
+proxychains dropbox &
 
 exec awesome
