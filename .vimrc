@@ -38,6 +38,7 @@ au BufNewFile *.l      0r ~/.vim/skeleton/skel.l
 au BufNewFile *.y      0r ~/.vim/skeleton/skel.y
 au BufNewFile *.html   0r ~/.vim/skeleton/skel.html
 au BufNewFile *.py     0r ~/.vim/skeleton/skel.py
+au BufNewFile *.js     0r ~/.vim/skeleton/skel.js
 au BufNewFile *.sh     0r ~/.vim/skeleton/skel.sh
 au BufNewFile Makefile 0r ~/.vim/skeleton/Makefile
 
