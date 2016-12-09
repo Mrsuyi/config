@@ -113,10 +113,10 @@ export LANG=en_US.UTF-8
 # c/cpp   compile/runtime   h/hpp/so
 I_PATH=${HOME}/include
 L_PATH=${HOME}/lib
-export C_INCLUDE_PATH=${C_INCLUDE_PATH}:${I_PATH}
-export CPLUS_INCLUDE_PATH=${CPLUS_INCLUDE_PATH}:${I_PATH}
-export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${L_PATH}
-export LIBRARY_PATH=${LIBRARY_PATH}:${L_PATH}
+export C_INCLUDE_PATH=${I_PATH}:${C_INCLUDE_PATH}
+export CPLUS_INCLUDE_PATH=${I_PATH}:${CPLUS_INCLUDE_PATH}
+export LD_LIBRARY_PATH=${L_PATH}:${LD_LIBRARY_PATH}
+export LIBRARY_PATH=${L_PATH}:${LIBRARY_PATH}
 
 # PATH
-export PATH=${PATH}:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin
+export PATH=${HOME}/bin:${PATH}
