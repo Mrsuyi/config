@@ -1,6 +1,6 @@
 #=================================== config ==================================#
 CXX      := g++
-CXXFLAGS := -std=c++11 -I..
+CXXFLAGS := -std=c++11
 AR       := ar
 ARFLAGS  := crs
 MAKE     := make
@@ -18,7 +18,7 @@ LIBS := $(LIBS:%=%/_bin/lib.a)
 MODS := $(MODS:%=%/_bin/mod.a)
 
 ALL  := $(wildcard *.cpp) $(wildcard $(SUBS:%=%/**.cpp))
-SRCS := $(filter-out $(MAIN), $(ALL)) 
+SRCS := $(filter-out $(wildcard _*.cpp), $(ALL)) 
 OBJS := $(patsubst %, _bin/%.o, $(basename $(SRCS)))
 DEPS := $(patsubst %, _bin/%.d, $(basename $(ALL) $(MAIN) $(TEST)))
 
