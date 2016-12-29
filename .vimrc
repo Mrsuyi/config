@@ -160,11 +160,12 @@ nnoremap <leader>w :w<cr>
 nnoremap <leader>e :q!<cr>
 nnoremap <leader>v :vsp<cr>
 nnoremap <leader>b :bn\|bd #<cr>
-nnoremap <leader>g <C-w>p
-nnoremap <leader>h <C-w>w
+nnoremap <leader>h :sp<cr>
 nnoremap <leader>l :Explore<cr>
 nnoremap <leader>n :noh<cr>
 nnoremap <leader>r @:
+nnoremap <leader>j <C-w>n
+nnoremap <leader>k <C-w>p
 
 " visual and select mode
 vnoremap . :norm.<cr>
