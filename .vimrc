@@ -10,6 +10,7 @@ set laststatus=2    "status bar
 set ruler           "cursor-pos
 set number          "line-num
 set nowrap          "no wrap
+set cursorline      "highlight current line
 
 "search
 set hlsearch        "highlight result
