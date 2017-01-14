@@ -165,7 +165,7 @@ nnoremap <leader>h :sp<cr>
 nnoremap <leader>l :Explore<cr>
 nnoremap <leader>n :noh<cr>
 nnoremap <leader>r @:
-nnoremap <leader>j <C-w>n
+nnoremap <leader>j <C-w>w
 nnoremap <leader>k <C-w>p
 
 " visual and select mode
