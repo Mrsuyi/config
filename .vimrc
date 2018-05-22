@@ -31,17 +31,18 @@ au Filetype javascript setlocal cindent
 au Filetype html,j2    setlocal shiftwidth=2 tabstop=2
 
 "auto load template
-au BufNewFile *.hpp    0r ~/.vim/skeleton/skel.hpp
-au BufNewFile *.h      0r ~/.vim/skeleton/skel.h
-au BufNewFile *.cpp    0r ~/.vim/skeleton/skel.cpp
-au BufNewFile *.c      0r ~/.vim/skeleton/skel.c
-au BufNewFile *.l      0r ~/.vim/skeleton/skel.l
-au BufNewFile *.y      0r ~/.vim/skeleton/skel.y
-au BufNewFile *.html   0r ~/.vim/skeleton/skel.html
-au BufNewFile *.py     0r ~/.vim/skeleton/skel.py
-au BufNewFile *.js     0r ~/.vim/skeleton/skel.js
-au BufNewFile *.sh     0r ~/.vim/skeleton/skel.sh
-au BufNewFile Makefile 0r ~/.vim/skeleton/Makefile
+au BufNewFile *.hpp    0r ~/config/vim-skeleton/skel.hpp
+au BufNewFile *.h      0r ~/config/vim-skeleton/skel.h
+au BufNewFile *.cpp    0r ~/config/vim-skeleton/skel.cpp
+au BufNewFile *.c      0r ~/config/vim-skeleton/skel.c
+au BufNewFile *.m      0r ~/config/vim-skeleton/skel.m
+au BufNewFile *.l      0r ~/config/vim-skeleton/skel.l
+au BufNewFile *.y      0r ~/config/vim-skeleton/skel.y
+au BufNewFile *.html   0r ~/config/vim-skeleton/skel.html
+au BufNewFile *.py     0r ~/config/vim-skeleton/skel.py
+au BufNewFile *.js     0r ~/config/vim-skeleton/skel.js
+au BufNewFile *.sh     0r ~/config/vim-skeleton/skel.sh
+au BufNewFile Makefile 0r ~/config/vim-skeleton/Makefile
 
 "history
 set history=50
@@ -67,28 +68,12 @@ Plugin 'tomasr/molokai'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'powerline/fonts'
 Plugin 'tpope/vim-fugitive'
-"Plugin 'derekwyatt/vim-fswitch'
-"Plugin 'kshenoy/vim-signature'
-"Plugin 'majutsushi/tagbar'
-"Plugin 'vim-scripts/indexer.tar.gz'
-"Plugin 'vim-scripts/DfrankUtil'
-"Plugin 'vim-scripts/vimprj'
-"Plugin 'dyng/ctrlsf.vim'
-"Plugin 'terryma/vim-multiple-cursors'
 Plugin 'scrooloose/nerdcommenter'
-"Plugin 'vim-scripts/DrawIt'
-Plugin 'Valloric/YouCompleteMe'
 Plugin 'solarnz/thrift.vim'
 Plugin 'rhysd/vim-clang-format'
-"Plugin 'derekwyatt/vim-protodef'
-"Plugin 'scrooloose/nerdtree'
-"Plugin 'fholgado/minibufexpl.vim'
-"Plugin 'gcmt/wildfire.vim'
-"Plugin 'sjl/gundo.vim'
-"Plugin 'Lokaltog/vim-easymotion'
-"Plugin 'suan/vim-instant-markdown'
-"Plugin 'lilydjwg/fcitx.vim'
+Plugin 'Valloric/YouCompleteMe'
 call vundle#end()
 
 filetype plugin indent on
@@ -102,12 +87,7 @@ colorscheme molokai
 syntax enable
 syntax on
 
-"set colorcolumn=80
-
 set t_Co=256      " use 265 colors in vim
-set guifont=YaHei\ consolas\ Hybrid\ 11.5
-
-"let loaded_matchparen = 1 "disable the fucking weird highlight
 
 hi Normal ctermfg=254 ctermbg=none
 hi ColorColumn ctermbg=236

@@ -1,11 +1,21 @@
-# Path to your oh-my-zsh installation.
-export ZSH=$HOME/.oh-my-zsh
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$PATH:/Users/mrsuyi/work/depot_tools
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
+# Path to your oh-my-zsh installation.
+export ZSH=/Users/mrsuyi/.oh-my-zsh
+
+# Set name of the theme to load. Optionally, if you set this to "random"
+# it'll load a random theme each time that oh-my-zsh is loaded.
+# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="robbyrussell"
+
+# Set list of themes to load
+# Setting this variable when ZSH_THEME=random
+# cause zsh load theme from this variable instead of
+# looking in ~/.oh-my-zsh/themes/
+# An empty array have no effect
+# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -24,7 +34,7 @@ ZSH_THEME="robbyrussell"
 # DISABLE_LS_COLORS="true"
 
 # Uncomment the following line to disable auto-setting terminal title.
-DISABLE_AUTO_TITLE="true"
+# DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
 # ENABLE_CORRECTION="true"
@@ -49,11 +59,18 @@ DISABLE_AUTO_TITLE="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git vi-mode extract common-aliases)
+plugins=(
+  git
+)
+
+source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-source $ZSH/oh-my-zsh.sh
+# export MANPATH="/usr/local/man:$MANPATH"
+
+# You may need to manually set your language environment
+# export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -66,7 +83,7 @@ source $ZSH/oh-my-zsh.sh
 # export ARCHFLAGS="-arch x86_64"
 
 # ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
+# export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -76,47 +93,5 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
-# 下面两个命令用来方便 cd <TAB> 的使用，避免不必要的 <TAB>
-zmodload zsh/complist
-bindkey -M menuselect '^M' .accept-line
-# 在 vi-mode 情况下 enable CTRL-R
-bindkey "^R" history-incremental-search-backward
-# 用 CTRL-P 往前搜索以一段字符串开头的命令
-bindkey '^p' history-search-backward
-bindkey '^e' vi-add-eol
-bindkey '^b' backward-char
-bindkey '^f' forward-char
-bindkey '^u' backward-kill-line
-
-alias c='clear'
-alias e='exit'
-alias f='fg'
-alias t='tree'
-alias pg='ps -ef | grep'
-alias du='du -h'
-alias df='df -h'
-alias l='ls -hl --time-style=iso --group-directories-first'
-alias ll='ls -ahl --time-style=iso --group-directories-first'
-alias rm='/bin/rm'
-alias vi='vim'
-alias gs='git status'
-alias gpo='git push origin'
-alias gst='git stash'
-alias cc="gcc -std=c11"
-alias cxx="g++ -std=c++11"
-alias v="valgrind --leak-check=yes"
-
-# language
-export LANG=en_US.UTF-8
-
-# c/cpp   compile/runtime   h/hpp/so
-I_PATH=${HOME}/include
-L_PATH=${HOME}/lib
-export C_INCLUDE_PATH=${I_PATH}:${C_INCLUDE_PATH}
-export CPLUS_INCLUDE_PATH=${I_PATH}:${CPLUS_INCLUDE_PATH}
-export LD_LIBRARY_PATH=${L_PATH}:${LD_LIBRARY_PATH}
-export LIBRARY_PATH=${L_PATH}:${LIBRARY_PATH}
-
-# PATH
-export PATH=${HOME}/bin:${PATH}
+alias c="clear"
+alias python2="/usr/bin/python"
