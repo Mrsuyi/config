@@ -1,9 +1,13 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH=$PATH:/Users/mrsuyi/work/depot_tools
+export PATH=/usr/local/Cellar/llvm/6.0.0/bin:$PATH
+export PATH=/usr/local/Cellar/llvm/6.0.0/share/clang:$PATH
+export PATH=/usr/local/Cellar/tree/1.7.0/bin:$PATH
+export PATH=/Users/mrsuyi/depot_tools:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/mrsuyi/.oh-my-zsh
+# export CHROMIUM_BUILDTOOLS_PATH=/Users/mrsuyi/depot_tools
 
 ulimit -n 16384
 ulimit -u 2048
@@ -102,4 +106,5 @@ fi
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias c="clear"
 alias e="exit"
+alias t="tree"
 alias python2="/usr/bin/python"
