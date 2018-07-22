@@ -113,7 +113,6 @@ let g:clang_format#style_options = {
             \ "AccessModifierOffset" : -4,
             \ "AllowShortIfStatementsOnASingleLine" : "true",
             \ "AlwaysBreakTemplateDeclarations" : "true",
-            \ "AlwaysBreakAfterReturnType" : "TopLevelDefinitions",
             \ "Standard" : "C++11",
             \ "BreakBeforeBraces" : "Allman"}
 let g:clang_format#detect_style_file = 1
@@ -147,6 +146,7 @@ nnoremap <leader>n :noh<cr>
 nnoremap <leader>r @:
 nnoremap <leader>j <C-w>w
 nnoremap <leader>k <C-w>p
+nnoremap <leader>1 :! 
 
 " visual and select mode
 vnoremap . :norm.<cr>
