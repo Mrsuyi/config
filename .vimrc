@@ -72,8 +72,8 @@ Plugin 'powerline/fonts'
 Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'solarnz/thrift.vim'
-Plugin 'rhysd/vim-clang-format'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'rhysd/vim-clang-format'
 call vundle#end()
 
 filetype plugin indent on
@@ -107,16 +107,6 @@ let g:netrw_sort_sequence='[\/]$'
 let g:airline_powerline_fonts=1
 let g:airline_theme="powerlineish"
 let g:airline#extensions#tabline#enabled=1
-
-"format
-let g:clang_format#style_options = {
-            \ "AccessModifierOffset" : -4,
-            \ "AllowShortIfStatementsOnASingleLine" : "true",
-            \ "AlwaysBreakTemplateDeclarations" : "true",
-            \ "Standard" : "C++11",
-            \ "BreakBeforeBraces" : "Allman"}
-let g:clang_format#detect_style_file = 1
-"au FileType c,cpp ClangFormatAutoEnable
 
 "====================================================================
 "                               hotkey
