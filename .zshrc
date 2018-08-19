@@ -1,8 +1,8 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH=$PATH:/Users/mrsuyi/depot_tools
 export PATH=$PATH:/usr/local/opt/llvm/bin
 export PATH=$PATH:/usr/local/opt/tree/bin
+export PATH=$PATH:/Users/mrsuyi/depot_tools
 
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/mrsuyi/.oh-my-zsh
