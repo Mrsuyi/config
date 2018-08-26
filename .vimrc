@@ -2,8 +2,9 @@
 "                                general
 "====================================================================
 set nocompatible   "not compatible with old version
-"set mouse=a        "enable mouse
+"set mouse=a       "enable mouse
 set wildmenu       "vim-cmd auto complete
+"set clipboard      "copy to os clipboard via register */+
 
 "layout
 set laststatus=2    "status bar

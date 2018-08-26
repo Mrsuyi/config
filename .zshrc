@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=/usr/local/opt/vim/bin:$PATH
 export PATH=$PATH:/usr/local/opt/llvm/bin
 export PATH=$PATH:/usr/local/opt/tree/bin
 export PATH=$PATH:/Users/mrsuyi/depot_tools
@@ -67,6 +67,7 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 plugins=(
   git
   vi-mode
+  colored-man-pages
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -110,3 +111,5 @@ alias c="clear"
 alias e="exit"
 alias t="tree"
 alias python2="/usr/bin/python"
+alias cpf="pbcopy < "
+alias cpd="pwd | pbcopy"
