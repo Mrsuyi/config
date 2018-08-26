@@ -6,7 +6,6 @@ export PATH=$PATH:/Users/mrsuyi/depot_tools
 
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/mrsuyi/.oh-my-zsh
-# export CHROMIUM_BUILDTOOLS_PATH=/Users/mrsuyi/depot_tools
 
 ulimit -n 16384
 ulimit -u 2048
@@ -67,6 +66,7 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
+  vi-mode
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -94,6 +94,9 @@ source $ZSH/oh-my-zsh.sh
 if [ ${TMUX} ]; then
      unset zle_bracketed_paste
 fi
+
+# Disable git status because it's too slow in Chromium dir.
+git config --global --add oh-my-zsh.hide-dirty 1
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
