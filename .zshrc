@@ -1,7 +1,12 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=/usr/local/opt/vim/bin:$PATH
-export PATH=$PATH:/usr/local/opt/llvm/bin
-export PATH=$PATH:/usr/local/opt/tree/bin
+
+# For homebrew.
+export PATH=$HOME/bin:/$PATH
+export EDITOR=vi
+export PATH=$HOME/homebrew/bin:/$PATH
+export LD_LIBRARY_PATH=$HOME/homebrew/lib:$LD_LIBRARY_PATH
+
+# For Chromium.
 export PATH=$PATH:/Users/mrsuyi/depot_tools
 
 # Path to your oh-my-zsh installation.
