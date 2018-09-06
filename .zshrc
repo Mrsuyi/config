@@ -9,6 +9,9 @@ export LD_LIBRARY_PATH=$HOME/homebrew/lib:$LD_LIBRARY_PATH
 # For Chromium.
 export PATH=$PATH:/Users/mrsuyi/depot_tools
 
+# For clang-format:
+export CHROMIUM_BUILDTOOLS_PATH=/Users/mrsuyi/bling/src/buildtools
+
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/mrsuyi/.oh-my-zsh
 
