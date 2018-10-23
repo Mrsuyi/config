@@ -26,8 +26,8 @@ set nofoldenable
 "indent
 set autoindent    "auto copy current-line's tab to new line
 set expandtab     "auto change tab to space
-set tabstop=4     "show tab as X space
-set shiftwidth=4  "add X space when use << >>
+set tabstop=2     "show tab as X space
+set shiftwidth=2  "add X space when use << >>
 "set softtabstop=4 "treat consistant space as tab
 filetype plugin indent on
 au Filetype javascript setlocal cindent

@@ -105,6 +105,7 @@ if [ ${TMUX} ]; then
 fi
 
 # Disable git status because it's too slow in Chromium dir.
+git config --global --unset-all oh-my-zsh.hide-dirty
 git config --global --add oh-my-zsh.hide-dirty 1
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
