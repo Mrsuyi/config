@@ -16,6 +16,8 @@ set cursorline      "highlight current line
 "search
 set hlsearch        "highlight result
 set incsearch       "search instantly
+set ignorecase      "case insensitive
+set smartcase       "case insensitive for 'abc', sensitive for 'aBc'
 
 "fold
 set foldmethod=syntax
