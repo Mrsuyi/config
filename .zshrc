@@ -18,7 +18,7 @@ export GOMA_OAUTH2_CONFIG_FILE="$HOME/.goma_oauth2_config"
 export ZSH=/Users/mrsuyi/.oh-my-zsh
 
 ulimit -n 16384
-ulimit -u 2048
+ulimit -u 4096
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
