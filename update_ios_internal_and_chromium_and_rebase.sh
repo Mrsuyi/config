@@ -2,7 +2,7 @@
 
 # update ios_internal
 set -x
-cd ~/bling/src/ios_internal && git fetch && GIT_OUTPUT="$(git checkout origin/master 2>&1)"
+cd src/ios_internal && git fetch && GIT_OUTPUT="$(git checkout origin/master 2>&1)"
 set +x
 
 if [ "$?" -ne "0" ]; then
@@ -15,4 +15,4 @@ echo "CHROMIUM_REVISION=$CHROMIUM_REVISION"
 
 # update chromium
 set -x
-cd ~/bling/src && git checkout master && git fetch && git reset --hard $CHROMIUM_REVISION && git rebase-update
+cd .. && git checkout master && git fetch && git reset --hard $CHROMIUM_REVISION && git rebase-update
