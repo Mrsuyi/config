@@ -1,8 +1,8 @@
 # If you come from bash you might have to change your $PATH.
 
-# For homebrew.
-export PATH=$HOME/bin:/$PATH
 export EDITOR=vi
+
+# For homebrew.
 export PATH=$HOME/homebrew/bin:/$PATH
 export LD_LIBRARY_PATH=$HOME/homebrew/lib:$LD_LIBRARY_PATH
 
