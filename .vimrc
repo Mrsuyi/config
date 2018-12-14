@@ -75,7 +75,7 @@ Plugin 'powerline/fonts'
 Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'solarnz/thrift.vim'
-Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
 Plugin 'rhysd/vim-clang-format'
 call vundle#end()
 
