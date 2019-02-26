@@ -135,6 +135,7 @@ nnoremap <leader>v :vsp<cr>
 nnoremap <leader>b :bn\|bd #<cr>
 nnoremap <leader>h :sp<cr>
 nnoremap <leader>l :Explore<cr>
+nnoremap <leader>m :message<cr>
 nnoremap <leader>n :noh<cr>
 nnoremap <leader>r @:
 nnoremap <leader>j <C-w>w
