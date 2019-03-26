@@ -121,6 +121,7 @@ git config --global --add oh-my-zsh.hide-dirty 1
 alias c="clear"
 alias e="exit"
 alias t="tree"
+alias g++="g++ -std=c++11"
 alias python2="/usr/bin/python"
 alias cpf="pbcopy < "
 alias cpd="pwd | pbcopy"
