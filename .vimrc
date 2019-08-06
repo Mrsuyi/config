@@ -1,6 +1,7 @@
 "====================================================================
 "                                general
 "====================================================================
+set encoding=utf-8
 set nocompatible   "not compatible with old version
 "set mouse=a       "enable mouse
 set wildmenu       "vim-cmd auto complete
@@ -75,7 +76,7 @@ Plugin 'powerline/fonts'
 Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'solarnz/thrift.vim'
-"Plugin 'Valloric/YouCompleteMe'
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'rhysd/vim-clang-format'
 call vundle#end()
 
@@ -141,6 +142,7 @@ nnoremap <leader>r @:
 nnoremap <leader>j <C-w>w
 nnoremap <leader>k <C-w>p
 nnoremap <leader>1 :! 
+nnoremap <leader>x :YcmCompleter FixIt<cr>
 
 " visual and select mode
 vnoremap . :norm.<cr>
