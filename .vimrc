@@ -75,8 +75,9 @@ Plugin 'powerline/fonts'
 Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'solarnz/thrift.vim'
-"Plugin 'Valloric/YouCompleteMe'
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'rhysd/vim-clang-format'
+Plugin 'https://gn.googlesource.com/gn', { 'rtp': 'tools/gn/misc/vim' }
 call vundle#end()
 
 filetype plugin indent on
