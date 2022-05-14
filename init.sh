@@ -27,11 +27,3 @@ rm -f ~/.tmux.conf
 ln -s ~/config/.tmux.conf ~
 rm -f ~/.tmux.theme
 ln -s ~/config/.tmux.theme ~
-
-# lxterminal
-rm -rf ~/.config/lxterminal
-ln -s ~/config/lxterminal ~/.config/
-
-# awesome
-rm -rf ~/.config/awesome
-ln -s ~/config/awesome ~/.config/

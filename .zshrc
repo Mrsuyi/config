@@ -7,7 +7,7 @@ export PATH=$HOME/homebrew/bin:/$PATH
 export LD_LIBRARY_PATH=$HOME/homebrew/lib:$LD_LIBRARY_PATH
 
 # For Chromium.
-export PATH=$PATH:/Users/mrsuyi/depot_tools
+export PATH=$PATH:/Users/mrsuyi/depot_tools:/usr/local/opt/llvm/bin
 
 # For clang-format.
 export CHROMIUM_BUILDTOOLS_PATH=/Users/mrsuyi/bling/src/buildtools
@@ -103,7 +103,7 @@ source $ZSH/oh-my-zsh.sh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 if [ ${TMUX} ]; then
-     unset zle_bracketed_paste
+  unset zle_bracketed_paste
 fi
 
 # Disable git status because it's too slow in Chromium dir.
@@ -121,12 +121,8 @@ git config --global --add oh-my-zsh.hide-dirty 1
 alias c="clear"
 alias e="exit"
 alias t="tree"
-alias g++="g++ -std=c++11"
-alias python2="/usr/bin/python"
+alias g++="g++ -std=c++17"
 alias cpf="pbcopy < "
 alias cpd="pwd | pbcopy"
 alias gmp="git map-branches"
 alias gnb="git new-branch --upstream-current"
-alias p="python"
-alias p3="python3"
-alias ip3="ipython3"
