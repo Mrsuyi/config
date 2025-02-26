@@ -83,8 +83,17 @@ au BufWritePost * if getline(1) =~ "^#!" | if getline(1) =~ "/bin/" | silent exe
 " Automatically change the working path to the path of the current file
 autocmd BufNewFile,BufEnter * silent! lcd %:p:h<F29>
 
+" Automatically format files on save
+au BufWrite * :AutoFormat
+
+" Make yank work
+if system('uname -s') == "Darwin\n"
+  set clipboard=unnamed "OSX
+else
+  set clipboard=unnamedplus "Linux
+endif
+
 " Keep clipboard content when Vim exits or suspends.
-set clipboard=unnamedplus
 if executable("xsel")
   function! PreserveClipboard()
     call system("xsel -ib", getreg('+'))
