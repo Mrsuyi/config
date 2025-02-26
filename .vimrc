@@ -52,6 +52,7 @@ set expandtab                          " auto change tab to space
 set tabstop=2                          " show tab as X space
 set shiftwidth=2                       " add X space when use << >>
 set softtabstop=2                      " treat consistant space as tab
+set ignorecase                         " ignore case in cmd completion
 au Filetype javascript setlocal cindent
 au Filetype html,j2    setlocal shiftwidth=2 tabstop=2
 au BufNewFile *.hpp    0r ~/config/vim-skeleton/skel.hpp

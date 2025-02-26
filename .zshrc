@@ -1,18 +1,8 @@
 # If you come from bash you might have to change your $PATH.
 
+source ~/.bashrc
+
 export EDITOR=vi
-
-# For homebrew.
-export PATH=$HOME/homebrew/bin:/$PATH
-export LD_LIBRARY_PATH=$HOME/homebrew/lib:$LD_LIBRARY_PATH
-
-# For Chromium.
-export PATH=$PATH:/Users/mrsuyi/depot_tools:/usr/local/opt/llvm/bin
-
-# For clang-format.
-export CHROMIUM_BUILDTOOLS_PATH=/Users/mrsuyi/bling/src/buildtools
-# For Goma.
-export GOMA_OAUTH2_CONFIG_FILE="$HOME/.goma_oauth2_config"
 
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/mrsuyi/.oh-my-zsh
@@ -105,24 +95,3 @@ source $ZSH/oh-my-zsh.sh
 if [ ${TMUX} ]; then
   unset zle_bracketed_paste
 fi
-
-# Disable git status because it's too slow in Chromium dir.
-git config --global --unset-all oh-my-zsh.hide-dirty
-git config --global --add oh-my-zsh.hide-dirty 1
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-alias c="clear"
-alias e="exit"
-alias t="tree"
-alias g++="g++ -std=c++17"
-alias cpf="pbcopy < "
-alias cpd="pwd | pbcopy"
-alias gmp="git map-branches"
-alias gnb="git new-branch --upstream-current"

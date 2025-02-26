@@ -49,7 +49,7 @@ flags = [
 '-fexceptions',
 '-x',
 'c++',
-'-std=c++11',
+'-std=c++17',
 '-I/usr/include',
 '-I./src',
 '-F/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks',

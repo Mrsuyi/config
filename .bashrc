@@ -7,7 +7,6 @@
 
 alias c='clear'
 alias e='exit'
-alias f='fg'
 alias t='tree'
 alias l='ls -hl --time-style=iso'
 alias ll='ls -ahl --time-style=iso'
@@ -24,7 +23,10 @@ then
     export TERM="xterm-256color"
 fi
 
-# powerline
-. /usr/lib/python3.5/site-packages/powerline/bindings/bash/powerline.sh
+# For homebrew.
+export PATH="/opt/homebrew/bin:$PATH"
+export LD_LIBRARY_PATH="opt/homebrew/lib:$LD_LIBRARY_PATH"
 
-#PS1='[\u@\h \W]\$ '
+# Disable git status because it's too slow in Chromium dir.
+git config --global --unset-all oh-my-zsh.hide-dirty
+git config --global --add oh-my-zsh.hide-dirty 1
