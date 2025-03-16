@@ -4,30 +4,29 @@ set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'tomasr/molokai'
+
+" Use Google-internal setup.
+if filereadable(expand('~/.vimrc_google'))
+  source ~/.vimrc_google
+else
+  Plugin 'Valloric/YouCompleteMe'
+  Plugin 'rhysd/vim-clang-format'
+endif
+
+Plugin 'ConradIrwin/vim-bracketed-paste'
+Plugin 'fcpg/vim-osc52'
+Plugin 'HerringtonDarkholme/yats.vim'
+Plugin 'mhinz/vim-signify'
 Plugin 'octol/vim-cpp-enhanced-highlight'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
 Plugin 'powerline/fonts'
 Plugin 'scrooloose/nerdcommenter'
-Plugin 'ConradIrwin/vim-bracketed-paste'
-Plugin 'mhinz/vim-signify'
+Plugin 'tomasr/molokai'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'vim-syntastic/syntastic'
-Plugin 'rhysd/vim-clang-format'
-Plugin 'Valloric/YouCompleteMe'
-call vundle#end()
+Plugin 'VundleVim/Vundle.vim'
 
-" Enable file type based indent configuration and syntax highlighting.
-" Note that when code is pasted via the terminal, vim by default does not detect
-" that the code is pasted (as opposed to when using vim's paste mappings), which
-" leads to incorrect indentation when indent mode is on.
-" To work around this, use ":set paste" / ":set nopaste" to toggle paste mode.
-" You can also use a plugin to:
-" - enter insert mode with paste (https://github.com/tpope/vim-unimpaired)
-" - auto-detect pasting (https://github.com/ConradIrwin/vim-bracketed-paste)
-filetype plugin indent on
-syntax on
+call vundle#end()
 
 "====================================================================
 "                                general
@@ -55,18 +54,6 @@ set softtabstop=2                      " treat consistant space as tab
 set ignorecase                         " ignore case in cmd completion
 au Filetype javascript setlocal cindent
 au Filetype html,j2    setlocal shiftwidth=2 tabstop=2
-au BufNewFile *.hpp    0r ~/config/vim-skeleton/skel.hpp
-au BufNewFile *.h      0r ~/config/vim-skeleton/skel.h
-au BufNewFile *.cpp    0r ~/config/vim-skeleton/skel.cpp
-au BufNewFile *.c      0r ~/config/vim-skeleton/skel.c
-au BufNewFile *.m      0r ~/config/vim-skeleton/skel.m
-au BufNewFile *.l      0r ~/config/vim-skeleton/skel.l
-au BufNewFile *.y      0r ~/config/vim-skeleton/skel.y
-au BufNewFile *.html   0r ~/config/vim-skeleton/skel.html
-au BufNewFile *.py     0r ~/config/vim-skeleton/skel.py
-au BufNewFile *.js     0r ~/config/vim-skeleton/skel.js
-au BufNewFile *.sh     0r ~/config/vim-skeleton/skel.sh
-au BufNewFile Makefile 0r ~/config/vim-skeleton/Makefile
 
 "history
 set history=1000
@@ -84,7 +71,7 @@ au BufWritePost * if getline(1) =~ "^#!" | if getline(1) =~ "/bin/" | silent exe
 autocmd BufNewFile,BufEnter * silent! lcd %:p:h<F29>
 
 " Automatically format files on save
-au BufWrite * :AutoFormat
+"au BufWrite * :AutoFormat
 
 " Make yank work
 if system('uname -s') == "Darwin\n"
@@ -107,6 +94,49 @@ if executable("xsel")
   vnoremap <silent> <c-z> :<c-u>call PreserveClipboadAndSuspend()<cr>
 endif
 
+"====================================================================
+"                                format
+"====================================================================
+
+" Enable file type based indent configuration and syntax highlighting.
+" Note that when code is pasted via the terminal, vim by default does not detect
+" that the code is pasted (as opposed to when using vim's paste mappings), which
+" leads to incorrect indentation when indent mode is on.
+" To work around this, use ":set paste" / ":set nopaste" to toggle paste mode.
+" You can also use a plugin to:
+" - enter insert mode with paste (https://github.com/tpope/vim-unimpaired)
+" - auto-detect pasting (https://github.com/ConradIrwin/vim-bracketed-paste)
+filetype plugin indent on
+syntax on
+
+""" Formatters
+augroup autoformat_settings
+  autocmd FileType borg,gcl,patchpanel AutoFormatBuffer gclfmt
+  autocmd FileType bzl AutoFormatBuffer buildifier
+  autocmd FileType c,cpp AutoFormatBuffer clang-format
+  autocmd FileType dart AutoFormatBuffer dartfmt
+  autocmd FileType go AutoFormatBuffer gofmt
+  autocmd FileType html,css,json AutoFormatBuffer js-beautify
+  autocmd FileType java AutoFormatBuffer google-java-format
+  autocmd FileType javascript,typescript,typescriptreact AutoFormatBuffer google-prettier
+  autocmd FileType jslayout AutoFormatBuffer jslfmt
+  autocmd FileType markdown AutoFormatBuffer mdformat
+  autocmd FileType ncl AutoFormatBuffer nclfmt
+  autocmd FileType proto AutoFormatBuffer protofmt
+  autocmd FileType python,piccolo AutoFormatBuffer pyformat
+  autocmd FileType sql,sdl AutoFormatBuffer format_sql
+  autocmd FileType textpb AutoFormatBuffer text-proto-format
+augroup END
+
+function! ToggleAutoFormatSettings()
+  if get(b:, 'codefmt_auto_format_buffer', 0)
+    NoAutoFormatBuffer
+    echo "[-] Automatic formatting is disabled."
+  else
+    AutoFormatBuffer
+    echo "[+] Automatic formatting is enabled."
+  endif
+endfunction
 
 "====================================================================
 "                              appearance
@@ -140,11 +170,10 @@ let g:airline#extensions#tabline#enabled=1
 "====================================================================
 let mapleader=";"  "set leader key
 
-"set pastetoggle=<leader>p
+set pastetoggle=<leader>p
 
 nnoremap <C-p> :bprev<cr>
 nnoremap <C-n> :bnext<cr>
-
 nnoremap <leader>q :q<cr>
 nnoremap <leader>w :w<cr>
 nnoremap <leader>v :vsp<cr>
@@ -156,12 +185,12 @@ nnoremap <leader>n :noh<cr>
 nnoremap <leader>j <C-w>w
 nnoremap <leader>k <C-w>p
 nnoremap <leader>1 :! 
-
 vnoremap . :norm.<cr>
 vnoremap p pgvy
-
 " plugin hotkey
-nnoremap <leader>g :YcmCompleter GoTo<cr>
-nnoremap <leader>x :YcmCompleter FixIt<cr>
+vmap <C-c> y:Oscyank<cr> xmap <F7> y:Oscyank<cr>
 nnoremap <leader>f :ClangFormat<cr>
 nnoremap <leader>a :call ToggleAutoFormatSettings()<cr>
+nnoremap <leader>g :YcmCompleter GoTo<cr>
+nnoremap <leader>x :YcmCompleter FixIt<cr>
+nnoremap <leader>i :YcmShowDetailedDiagnostic<cr>
