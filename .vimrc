@@ -5,16 +5,11 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-" Use Google-internal setup.
-if filereadable(expand('~/.vimrc_google'))
-  source ~/.vimrc_google
-else
-  Plugin 'Valloric/YouCompleteMe'
-  Plugin 'rhysd/vim-clang-format'
-endif
-
 Plugin 'ConradIrwin/vim-bracketed-paste'
 Plugin 'fcpg/vim-osc52'
+Plugin 'google/vim-codefmt'
+Plugin 'google/vim-glaive'
+Plugin 'google/vim-maktaba'
 Plugin 'HerringtonDarkholme/yats.vim'
 Plugin 'mhinz/vim-signify'
 Plugin 'octol/vim-cpp-enhanced-highlight'
@@ -25,6 +20,13 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'VundleVim/Vundle.vim'
+
+" Use Google-internal setup.
+if filereadable(expand('~/.vimrc_google'))
+  source ~/.vimrc_google
+else
+  Plugin 'Valloric/YouCompleteMe'
+endif
 
 call vundle#end()
 
