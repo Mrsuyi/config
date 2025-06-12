@@ -7,8 +7,6 @@ call vundle#begin()
 
 Plugin 'ConradIrwin/vim-bracketed-paste'
 Plugin 'fcpg/vim-osc52'
-Plugin 'google/vim-codefmt'
-Plugin 'google/vim-glaive'
 Plugin 'google/vim-maktaba'
 Plugin 'HerringtonDarkholme/yats.vim'
 Plugin 'mhinz/vim-signify'
@@ -25,6 +23,8 @@ Plugin 'VundleVim/Vundle.vim'
 if filereadable(expand('~/.vimrc_google'))
   source ~/.vimrc_google
 else
+  Plugin 'google/vim-codefmt'
+  Plugin 'google/vim-glaive'
   Plugin 'Valloric/YouCompleteMe'
 endif
 
